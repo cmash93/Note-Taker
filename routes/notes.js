@@ -6,12 +6,12 @@ let data = require('../db/db.json');
 
 
 // GET Route for retrieving notes
-notes.get('/', (req, res) => {
+notes.get('/notes', (req, res) => {
     res.json(data)
 });
 
 // POST Route for new note
-notes.post('/', (req, res) => {
+notes.post('/notes', (req, res) => {
     let newNote = req.body;
     newNote.id = uuid.v4();
 

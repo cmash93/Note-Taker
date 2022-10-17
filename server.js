@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
-const api = require('./routes/index')
-// need a routes const here
+const api = require('./routes/index');
+const router = require('express').Router();
 
 const PORT = process.env.PORT || 3001;
 
@@ -13,16 +13,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api', api);
 
 app.use(express.static('public'));
+// app.use(express.static('css'));
+// app.use(express.static('js'));
+
+// GET Route for notes.html
+app.get('/notes', (req, res) => {
+    res.sendFile(path.join(__dirname, '/public/notes.html'))
+})
 
 // GET Route for index.html
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'))
 })
 
-// GET Route for notes.html
-app.get('/notes', (req, res) => {
-    res.sendFile(path.join(__dirname, '/public/notes.html'))
-})
 
 // Listening notification within console
 app.listen(PORT, () => {
