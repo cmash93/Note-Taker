@@ -1,13 +1,33 @@
 const notes = require('express').Router();
+const fs = require('fs');
+const uuid = require('uuid');
+
+let data = require('../db/db.json');
+
 
 // GET Route for retrieving notes
-notes.get('/', (res, req) => {
-    
+notes.get('/', (req, res) => {
+    res.json(data)
 });
 
 // POST Route for new note
-notes.post('/', (res, req) => {
-    
-})
+notes.post('/', (req, res) => {
+    let newNote = req.body;
+    newNote.id = uuid.v4();
+
+    data.push(newNote);
+    fs.writeFile('./db/db.json', JSON.stringify(data, null, 4), (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            res.send(newNote)
+        }
+    })
+});
+
+// DELETE note
+// notes.delete('/', (req, res) => {
+
+// });
 
 module.exports = notes;

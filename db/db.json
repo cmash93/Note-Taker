@@ -1,6 +1,14 @@
 [
     {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"New idea",
+        "text":"Wouldn't it be cool if we could teleport to the moon?"
+    },
+    {
+        "title":"Newer idea",
+        "text":"Wouldn't it be cool if we could teleport anywhere?"
+    },
+    {
+        "title":"Bad idea",
+        "text":"Ok, not anywhere..."
     }
 ]
