@@ -1,8 +1,11 @@
 const notes = require('express').Router();
 const fs = require('fs');
 const uuid = require('uuid');
+const util = require('util');
 
 let data = require('../db/db.json');
+const readFileAsync = util.promisify(fs.readFile);
+const writeFileAsync = util.promisify(fs.writeFile);
 
 
 // GET Route for retrieving notes
@@ -16,7 +19,7 @@ notes.post('/notes', (req, res) => {
     newNote.id = uuid.v4();
 
     data.push(newNote);
-    fs.writeFile('./db/db.json', JSON.stringify(data, null, 4), (err) => {
+    writeFileAsync('./db/db.json', JSON.stringify(data), (err) => {
         if (err) {
             console.log(err)
         } else {
