@@ -3,7 +3,6 @@ const fs = require('fs');
 const util = require('util');
 const uuid = require('uuid');
 const readFromFile = util.promisify(fs.readFile);
-let db = require('../db/db.json');
 
 
 // GET Route for retrieving notes
