@@ -4,7 +4,7 @@
 
 ### [Visit the live app on Heroku!](https://shrouded-savannah-31758.herokuapp.com/)
 
-## 📄 Table of Contents    
+## Table of Contents    
 
 - [Demo](#demo)
 - [Installation](#installation)
