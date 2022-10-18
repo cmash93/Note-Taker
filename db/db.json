@@ -1,14 +1,1 @@
-[
-    {
-        "title":"New idea",
-        "text":"Wouldn't it be cool if we could teleport to the moon?"
-    },
-    {
-        "title":"Newer idea",
-        "text":"Wouldn't it be cool if we could teleport anywhere?"
-    },
-    {
-        "title":"Bad idea",
-        "text":"Ok, not anywhere..."
-    }
-]
+[{"title":"Weird dream...","text":"A few days ago, I had a dream that I became a super saiyan. I rode through my workplace on a golden dragon, but then Vegeta came in, ate my hair, and stole my super saiyan power. Then I just went back to my day job...\n\n(via reddit)","id":"b9d71dac-cc58-482a-880e-ab8bfb7b70ae"},{"title":"a haiku for heroku","text":"heroku create\ngit push heroku HEAD:main\nuse master instead","id":"b706a160-4cdc-447d-8dbd-7ec19919d570"}]
