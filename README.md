@@ -32,7 +32,7 @@ npm install uuid
 ```    
 
 ## Usage
-*If running site on local host*
+*If running site on local host*    
 Within your console:    
 ```
 node server.js
