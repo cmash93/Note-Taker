@@ -1,16 +1,18 @@
 const api = require('express').Router();
 const fs = require('fs');
 const util = require('util');
-const uuid = require('uuid');
+const {v4 : uuidv4} = require('uuid');
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
+let db;
 
 
 // GET Route for retrieving notes
 api.get('/notes', (req, res) => {
     readFileSync('db/db.json', 'utf8')
     .then((data) => {
-        res.json(data)
+        db = JSON.parse(data)
+        res.json(db)
     })
 });
 
@@ -18,18 +20,20 @@ api.get('/notes', (req, res) => {
 api.post('/notes', (req, res) => {
     readFileAsync('db/db.json', 'utf8')
     .then((data) => {
+        db = JSON.parse(data)
 
         let newNote = req.body;
-        newNote.id = uuid.v4();
+        newNote.id = uuidv4();
+        console.log(newNote.id);
     
         data.push(newNote);
-        writeFileAsync('./db/db.json', JSON.stringify(data))
-        .then((err) => {
-            if (err) {
-                console.log(err)
-            } else { console.log('Note has been added successfully') }
+        db = JSON.stringify(db);
+
+        writeFileAsync('./db/db.json', db)
+        .then((data) => {
+            console.log('Note has been added successfully') 
         });
-        res.send(data)
+        res.send(db)
     });
 });
 

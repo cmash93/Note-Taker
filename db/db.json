@@ -1,14 +1,17 @@
 [
     {
         "title":"New idea",
-        "text":"Wouldn't it be cool if we could teleport to the moon?"
+        "text":"Wouldn't it be cool if we could teleport to the moon?",
+        "id": 1
     },
     {
         "title":"Newer idea",
-        "text":"Wouldn't it be cool if we could teleport anywhere?"
+        "text":"Wouldn't it be cool if we could teleport anywhere?",
+        "id": 2
     },
     {
         "title":"Bad idea",
-        "text":"Ok, not anywhere..."
+        "text":"Ok, not anywhere...",
+        "id": 3
     }
 ]
